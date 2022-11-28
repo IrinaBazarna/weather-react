@@ -12,3 +12,6 @@ root.render(
 );
 
 reportWebVitals();
+//css of App
+//animated icon
+//Celsious snd farenheit

@@ -43,7 +43,7 @@ function Weather(props) {
         <ul>
           <li>Temperature{Math.round(weather.temperature)}°C</li>
           <li>Humidity:{weather.humidity}%</li>
-          <li>Wind:{weather.wind}km/h</li>
+          <li>Wind:{Math.round(weather.wind)}km/h</li>
           <li>Description:{weather.description}</li>
 
           <li>
@@ -53,7 +53,39 @@ function Weather(props) {
       </div>
     );
   } else {
-    return form;
+    return (
+      { form },
+      (
+        <div className="Weatherinf">
+          <h1>{props.data.city}</h1>
+          <ul>
+            <li>{props.data.date}</li>
+            <li className="text-capitalize">{props.data.description}</li>
+          </ul>
+          <div className="row mt-3">
+            <div className="col-6">
+              <div className="clearfix">
+                <div className="float-left">{props.data.icon}</div>
+                <div className="float-left">
+                  <span className="temperature">
+                    {Math.round(props.data.temperature)}
+                  </span>
+                  <span className="unit">°C</span>
+                </div>
+              </div>
+            </div>
+            <div className="col-6">
+              <ul>
+                <li>Temperature: {Math.round(weather.temperature)} °C</li>
+                <li>Humidity: {weather.humidity} %</li>
+                <li>Wind: {weather.wind} km/h</li>
+                <li>Description: {weather.description}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )
+    );
   }
 }
 export default Weather;

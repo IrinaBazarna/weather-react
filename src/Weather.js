@@ -23,11 +23,11 @@ function weatherInf(props) {
     });
     setTemperature(response.data.main.temp);
   }
-  function temperature(event) {
+  function temperature() {
     setTemperature(response.data.main.temp);
   }
 
-  function updateCity(event) {
+  function updateCity() {
     setCity(event.target.value);
   }
 

@@ -2,12 +2,6 @@ import React from "react";
 import DayChange from "./DayChange";
 import { WiDaySunny } from "weather-icons-react";
 
-class Weather extends React.Component {
-  render() {
-    return <WiDaySunny size={24} color="#000" />;
-  }
-}
-
 export default function WeatherDate(props) {
   return (
     <div className="Weather">

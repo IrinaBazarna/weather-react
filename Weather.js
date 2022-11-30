@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import WeatherDate from "./src/WeatherDate";
+import WeatherDate from "./WeatherDate";
 import axios from "axios";
 import "./Weather.css";
 
@@ -62,44 +62,10 @@ function Weather(props) {
     return (
       <div>
         {form}
-        <WeatherDate date={weather} />
+        <WeatherDate />
       </div>
     );
   } else {
-    return (
-      { form },
-      (
-        <div className="Weatherinf">
-          <h1>{props.data.city}</h1>
-          <ul>
-            <li>{props.data.date}</li>
-            <li className="text-capitalize">{props.data.description}</li>
-          </ul>
-          <div className="row mt-3">
-            <div className="col-6">
-              <div className="clearfix">
-                <div className="float-left">{props.data.icon}</div>
-                <div className="float-left">
-                  <span className="temperature">
-                    {Math.round(props.data.temperature)}
-                  </span>
-                  <span className="unit">°C</span>
-                </div>
-              </div>
-            </div>
-            <div className="col-6">
-              <ul>
-                <li>Temperature: {Math.round(response.data.main.temp)} °C</li>
-                <li>Humidity: {response.data.main.humidity} %</li>
-                <li>Wind: {response.data.wind.speed} km/h</li>
-                <li>Description: {response.data.weather[0].description}</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      )
-    );
-
     search();
     return "Loading...";
   }

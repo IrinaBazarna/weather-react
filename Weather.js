@@ -59,7 +59,7 @@ function Weather(props) {
     </div>
   );
 
-  if (weather.loaded) {
+  if (loaded) {
     return (
       <div>
         {form}

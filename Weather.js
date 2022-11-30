@@ -89,10 +89,10 @@ function Weather(props) {
             </div>
             <div className="col-6">
               <ul>
-                <li>Temperature: {Math.round(weather.temperature)} °C</li>
-                <li>Humidity: {weather.humidity} %</li>
-                <li>Wind: {weather.wind} km/h</li>
-                <li>Description: {weather.description}</li>
+                <li>Temperature: {Math.round(response.data.main.temp)} °C</li>
+                <li>Humidity: {response.data.main.humidity} %</li>
+                <li>Wind: {response.data.wind.speed} km/h</li>
+                <li>Description: {response.data.weather[0].description}</li>
               </ul>
             </div>
           </div>

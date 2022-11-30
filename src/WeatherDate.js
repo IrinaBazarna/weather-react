@@ -13,7 +13,7 @@ return (
           </ul>
           <div className="row">
             <div className="col-6">
-             <Icon code={props.data.icon} alt={props.data.description} />
+             <Icon code={props.data.iconUrl} alt={props.data.description} />
               <img
                 src={props.data.iconUrl}
                 alt={props.data.description}
@@ -24,10 +24,10 @@ return (
             </div>
             <div className="col-6">
               <ul>
-                <li>Temperature{Math.round(weather.temperature)}°C</li>
-                <li>Humidity:{weather.humidity}%</li>
-                <li>Wind:{weather.wind}km/h</li>
-                <li>Description:{weather.description}</li>
+                <li>Temperature{Math.round(props.data.temperature)}°C</li>
+                <li>Humidity:{props.data.humidity}%</li>
+                <li>Wind:{props.data.wind}km/h</li>
+                <li>Description:{props.data.description}</li>
           </ul>  </div>
           </div>
         </div>

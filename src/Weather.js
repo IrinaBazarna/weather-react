@@ -9,7 +9,7 @@ function Weather(props) {
   const [weather, setWeather] = useState({});
   const [temperature, setTemperature] = useState(null);
 
-  function showWeather(response) {
+  function weather(response) {
     setLoaded(true);
     setWeather({
       loaded: true,
@@ -21,6 +21,9 @@ function Weather(props) {
       iconUrl: response.data.weather[0].icon,
       description: response.data.weather[0].description,
     });
+    setTemperature(response.data.main.temp);
+  }
+  function temperature(event) {
     setTemperature(response.data.main.temp);
   }
 
@@ -36,7 +39,8 @@ function Weather(props) {
   function handleSubmit(event) {
     event.preventDefault();
     search();
-    showWeather();
+    weather();
+    temperature();
   }
   let form = (
     <div className="Weather">

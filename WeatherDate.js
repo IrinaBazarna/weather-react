@@ -15,7 +15,7 @@ export default function WeatherDate(props) {
         <div className="col-6">
           <Icon code={props.data.weather.icon} alt={props.data.description} />{" "}
           <img
-            src={props.data.weather.icon}
+            src={props.data.weather[0].icon}
             alt={props.data.description}
             className="float-left"
           />

@@ -36,6 +36,7 @@ function Weather(props) {
   function handleSubmit(event) {
     event.preventDefault();
     search();
+    showWeather();
   }
   let form = (
     <div className="Weather">

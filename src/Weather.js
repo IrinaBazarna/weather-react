@@ -3,7 +3,7 @@ import WeatherDate from "./WeatherDate";
 import axios from "axios";
 import "./Weather.css";
 
-function Weather(props) {
+function weatherInf(props) {
   const [city, setCity] = useState(props.city);
   const [loaded, setLoaded] = useState(false);
   const [weather, setWeather] = useState({});
@@ -75,4 +75,4 @@ function Weather(props) {
     return "Loading...";
   }
 }
-export default Weather;
+export default weatherInf;

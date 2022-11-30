@@ -9,7 +9,7 @@ function weatherInf(props) {
   const [weather, setWeather] = useState({});
   const [temperature, setTemperature] = useState(null);
 
-  function weather(response) {
+  function weatherDate(response) {
     setLoaded(true);
     setWeather({
       loaded: true,
@@ -27,7 +27,7 @@ function weatherInf(props) {
     setTemperature(response.data.main.temp);
   }
 
-  function updateCity() {
+  function updateCity(event) {
     setCity(event.target.value);
   }
 
@@ -39,7 +39,7 @@ function weatherInf(props) {
   function handleSubmit(event) {
     event.preventDefault();
     search();
-    weather();
+    weatherDate();
     temperature();
   }
   let form = (
@@ -63,7 +63,7 @@ function weatherInf(props) {
     </div>
   );
 
-  if (loaded) {
+  if ((loaded, weather)) {
     return (
       <div>
         {form}

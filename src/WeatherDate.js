@@ -1,11 +1,7 @@
 import React from "react";
 import DayChange from "./DayChange";
 
-class Weather extends React.Component {
-  render() {
-    return <WiDaySunny size={24} color="#000" />;
-  }
-}
+
 
 export default function WeatherDate(props) {
   return (
@@ -21,7 +17,7 @@ export default function WeatherDate(props) {
         <div className="col-6">
           <Icon code={props.data.weather.icon} alt={props.data.description} />
           <img
-            src={props.data.weather.icon}
+            src={props.data.weather[0].icon}
             alt={props.data.description}
             className="float-left"
           />

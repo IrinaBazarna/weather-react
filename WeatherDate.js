@@ -1,6 +1,5 @@
 import React from "react";
 import DayChange from "./DayChange";
-import { WiDaySunny } from "weather-icons-react";
 
 export default function WeatherDate(props) {
   return (
@@ -16,7 +15,7 @@ export default function WeatherDate(props) {
         <div className="col-6">
           <Icon code={props.data.iconUrl} alt={props.data.description} />
           <img
-            src="ttps://najens.github.io/weather-icons-react/"
+            src={props.data.weather.icon}
             alt={props.data.description}
             className="float-left"
           />

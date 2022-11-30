@@ -18,7 +18,7 @@ function Weather(props) {
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
-      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      iconUrl: response.data.weather[0].icon,
       description: response.data.weather[0].description,
     });
     setTemperature(response.data.main.temp);

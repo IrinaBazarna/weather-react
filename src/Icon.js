@@ -1,5 +1,7 @@
 import React from "react";
 
 export default function Icon(props) {
-  return <img src={props.data.weather.icon} alt={props.alt} />;
+  return (
+    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt={props.alt} />
+  );
 }

@@ -7,7 +7,6 @@ function weatherInf(props) {
   const [city, setCity] = useState(props.city);
   const [loaded, setLoaded] = useState(false);
   const [weather, setWeather] = useState({});
-  const [temperature, setTemperature] = useState(null);
 
   function weatherDate(response) {
     setLoaded(true);
@@ -21,10 +20,6 @@ function weatherInf(props) {
       iconUrl: response.data.weather[0].icon,
       description: response.data.weather[0].description,
     });
-    setTemperature(response.data.main.temp);
-  }
-  function temperature() {
-    setTemperature(response.data.main.temp);
   }
 
   function updateCity(event) {
@@ -40,7 +35,6 @@ function weatherInf(props) {
     event.preventDefault();
     search();
     weatherDate();
-    temperature();
   }
   let form = (
     <div className="Weather">

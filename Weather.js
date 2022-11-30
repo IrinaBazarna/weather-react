@@ -61,7 +61,6 @@ function Weather(props) {
           <ul>
             <li>{props.data.date}</li>
             <li className="text-capitalize">{props.data.description}</li>
-            //npm install npm@9.1.2
           </ul>
           <div className="row mt-3">
             <div className="col-6">

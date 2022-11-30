@@ -13,7 +13,7 @@ export default function WeatherDate(props) {
       </ul>
       <div className="row">
         <div className="col-6">
-          <Icon code={props.data.iconUrl} alt={props.data.description} />
+          <Icon code={props.data.weather.icon} alt={props.data.description} />{" "}
           <img
             src={props.data.weather.icon}
             alt={props.data.description}

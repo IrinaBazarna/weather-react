@@ -1,6 +1,6 @@
 import React from "react";
 import DayChange from "./DayChange";
-import Icon from "./Icon";
+import Icon from "./src/Icon";
 
 export default function WeatherDate(props) {
   return (

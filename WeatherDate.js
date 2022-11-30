@@ -1,6 +1,8 @@
 import React from "react";
 import DayChange from "./DayChange";
 
+
+
 export default function WeatherDate(props) {
   return (
     <div className="Weather">
@@ -13,7 +15,7 @@ export default function WeatherDate(props) {
       </ul>
       <div className="row">
         <div className="col-6">
-          <Icon code={props.data.weather.icon} alt={props.data.description} />{" "}
+          <Icon code={props.data.weather.icon} alt={props.data.description} />
           <img
             src={props.data.weather[0].icon}
             alt={props.data.description}

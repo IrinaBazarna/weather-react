@@ -5,7 +5,7 @@ import Icon from "./Icon";
 export default function WeatherDate(props) {
   return (
     <div className="Weather">
-      <h1>{props.data.city}</h1>
+      <h1>Hello{props.data.city}</h1>
       <ul>
         <li>
           <DayChange date={props.data.date} />

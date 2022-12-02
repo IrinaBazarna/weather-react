@@ -1,11 +1,13 @@
 import React from "react";
 import DayChange from "./DayChange";
 import Icon from "./Icon";
+import Weather from "./Weather";
 
 export default function WeatherDate(props) {
   return (
     <div className="Weather">
       <h1>Hello{props.data.city}</h1>
+<Weather />
       <ul>
         <li>
           <DayChange date={props.data.date} />

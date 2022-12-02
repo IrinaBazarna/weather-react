@@ -1,29 +1,39 @@
 import React from "react";
-import Weather from "./Weather";
-import "./App.css";
+import DayChange from "./DayChange";
+import Icon from "./Icon";
 
-function App() {
+export default function WeatherDate(props) {
   return (
-    <div className="App">
-      <div className="container">
-        <div className="row">
-          <h1>Wheather App</h1>
-          <Weather />
-          <p>
-            <a
-              className="App-link"
-              href="https://github.com/IrinaBazarna/weather-react"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Open sourse code
-            </a>{" "}
-            by Irina Bazarna
-          </p>
+    <div className="Weather">
+      <h1>{props.data.city}</h1>
+      <ul>
+        <li>
+          <DayChange date={props.data.date} />
+        </li>
+        <li className="text-capitalize">{props.data.description}</li>
+      </ul>
+      <div className="row">
+        <div className="col-6">
+          <Icon code={props.data.weather.icon} alt={props.data.description} />
+          <img
+            src="http://openweathermap.org/img/wn/10d@2x.png"
+            alt={props.data.description}
+            className="float-left"
+          />
+          <span className="temperature">
+            {Math.round(props.data.temperature)}
+          </span>
+          <span className="unit">°C</span>
+        </div>
+        <div className="col-6">
+          <ul>
+            <li>Temperature{Math.round(props.data.temperature)}°C</li>
+            <li>Humidity:{props.data.humidity}%</li>
+            <li>Wind:{props.data.wind}km/h</li>
+            <li>Description:{props.data.description}</li>
+          </ul>{" "}
         </div>
       </div>
     </div>
   );
 }
-
-export default App;

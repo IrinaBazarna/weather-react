@@ -5,13 +5,11 @@ import "./Weather.css";
 
 function weatherInf(props) {
   const [city, setCity] = useState(props.city);
-  const [loaded, setLoaded] = useState(false);
-  const [weather, setWeather] = useState({});
+  const [weather, setWeather] = useState({ready: false});
 
   function weatherDate(response) {
-    setLoaded(true);
     setWeather({
-      loaded: true,
+      ready: true,
       date: new Date(response.data.dt * 1000),
       city: response.data.name,
       temperature: response.data.main.temp,
@@ -21,7 +19,10 @@ function weatherInf(props) {
       description: response.data.weather[0].description,
     });
   }
-
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
   function updateCity(event) {
     setCity(event.target.value);
   }
@@ -31,11 +32,7 @@ function weatherInf(props) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleSubmit);
   }
-  function handleSubmit(event) {
-    event.preventDefault();
-    search();
-    weatherDate();
-  }
+
   let form = (
     <div className="Weather">
       <form onSubmit={handleSubmit}>
@@ -57,11 +54,11 @@ function weatherInf(props) {
     </div>
   );
 
-  if ((loaded, weather)) {
+  if ((weather.ready)) {
     return (
       <div>
         {form}
-        <WeatherDate />
+        <WeatherDate data={weather} />
       </div>
     );
   } else {

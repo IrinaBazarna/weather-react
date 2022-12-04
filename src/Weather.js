@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import WeatherDate from "./WeatherDate";
 import axios from "axios";
-import "./Weather.css";
 
-function weatherInf(props) {
+
+function WeatherInf(props) {
   const [city, setCity] = useState(props.city);
-  const [weather, setWeather] = useState({ready: false});
+  const [weather, setWeather] = useState({ ready: false });
 
   function weatherDate(response) {
     setWeather({
@@ -22,6 +22,7 @@ function weatherInf(props) {
   function handleSubmit(event) {
     event.preventDefault();
     search();
+    weatherDate();
   }
   function updateCity(event) {
     setCity(event.target.value);
@@ -54,7 +55,7 @@ function weatherInf(props) {
     </div>
   );
 
-  if ((weather.ready)) {
+  if (weather.ready) {
     return (
       <div>
         {form}
@@ -66,4 +67,5 @@ function weatherInf(props) {
     return "Loading...";
   }
 }
-export default weatherInf;
+export default WeatherInf;
+

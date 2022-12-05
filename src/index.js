@@ -7,7 +7,8 @@ import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+  <div><h1> Weather App </h1>
+    <App /></div>
   </React.StrictMode>
 );
 
